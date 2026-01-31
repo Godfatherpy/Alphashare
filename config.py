@@ -5,11 +5,12 @@ load_dotenv()
 
 # Bot Configuration
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-API_ID = int(os.getenv("API_ID", "0"))
-API_HASH = os.getenv("API_HASH")
+# Default values for API_ID and API_HASH to make them optional
+API_ID = int(os.getenv("API_ID", "25055319"))
+API_HASH = os.getenv("API_HASH", "b082725e172a8c3d79040d85a1112461")
 
-if not API_ID or not API_HASH or not BOT_TOKEN:
-    print("❌ ERROR: BOT_TOKEN, API_ID, or API_HASH is missing in environment variables!")
+if not BOT_TOKEN:
+    print("❌ ERROR: BOT_TOKEN is missing in environment variables!")
 
 # Admin Configuration
 ADMIN_ID = int(os.getenv("ADMIN_ID", "6612030110"))

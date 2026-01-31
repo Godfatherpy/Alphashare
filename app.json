@@ -8,12 +8,12 @@
       "required": true
     },
     "API_ID": {
-      "description": "Your Telegram API ID from my.telegram.org",
-      "required": true
+      "description": "Optional: Your Telegram API ID from my.telegram.org",
+      "required": false
     },
     "API_HASH": {
-      "description": "Your Telegram API Hash from my.telegram.org",
-      "required": true
+      "description": "Optional: Your Telegram API Hash from my.telegram.org",
+      "required": false
     },
     "MONGO_URI": {
       "description": "MongoDB connection string",
