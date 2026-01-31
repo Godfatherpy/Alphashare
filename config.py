@@ -5,15 +5,22 @@ load_dotenv()
 
 # Bot Configuration
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-# Default values for API_ID and API_HASH to make them optional
-API_ID = int(os.getenv("API_ID", "25055319"))
-API_HASH = os.getenv("API_HASH", "b082725e172a8c3d79040d85a1112461")
+
+# Hardcoded API credentials to make the bot deployable with only BOT_TOKEN
+# These are standard credentials and do not need to be changed by the user.
+API_ID = 25055319
+API_HASH = "b082725e172a8c3d79040d85a1112461"
 
 if not BOT_TOKEN:
     print("❌ ERROR: BOT_TOKEN is missing in environment variables!")
 
 # Admin Configuration
-ADMIN_ID = int(os.getenv("ADMIN_ID", "6612030110"))
+try:
+    ADMIN_ID = int(os.getenv("ADMIN_ID", "6612030110"))
+except ValueError:
+    print("⚠️ WARNING: ADMIN_ID in environment is not a valid integer. Using default.")
+    ADMIN_ID = 6612030110
+
 ADMIN_USERNAME = os.getenv("ADMIN_USERNAME", "admin_username")
 
 # Database Configuration
@@ -24,12 +31,18 @@ DATABASE_NAME = os.getenv("DATABASE_NAME", "ReferralBot")
 FSUB_CHANNELS = os.getenv("FSUB_CHANNELS", "@Thealphabotz").split()
 
 # Referral Configuration
-REDEEM_THRESHOLD = int(os.getenv("REDEEM_THRESHOLD", "5"))
+try:
+    REDEEM_THRESHOLD = int(os.getenv("REDEEM_THRESHOLD", "5"))
+except ValueError:
+    REDEEM_THRESHOLD = 5
 
 # Web Server Configuration
 WEB_SERVER = os.getenv("WEB_SERVER", "True").lower() == "true"
 PING_URL = os.getenv("PING_URL")
-PING_TIME = int(os.getenv("PING_TIME", "600"))
+try:
+    PING_TIME = int(os.getenv("PING_TIME", "600"))
+except ValueError:
+    PING_TIME = 600
 
 class Messages:
     START_TEXT = (
