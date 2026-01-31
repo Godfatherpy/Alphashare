@@ -4,20 +4,20 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Bot Configuration
-BOT_TOKEN = os.getenv("BOT_TOKEN")
+BOT_TOKEN = os.getenv("8519887491:AAE4050MkDgkz6jGSZi64FU1dAwU_no7h5w")
 API_ID = int(os.getenv("API_ID"))
 API_HASH = os.getenv("API_HASH")
 
 # Admin Configuration
 ADMIN_ID = int(os.getenv("ADMIN_ID", "6612030110"))
-ADMIN_USERNAME = os.getenv("ADMIN_USERNAME", "admin_username")
+ADMIN_USERNAME = os.getenv("ADMIN_USERNAME", "unlimitedmoneyhackmodapk")
 
 # Database Configuration
 MONGO_URI = os.getenv("MONGO_URI")
 DATABASE_NAME = os.getenv("DATABASE_NAME", "ReferralBot")
 
 # Force Join Configuration (Space-separated usernames)
-FSUB_CHANNELS = os.getenv("FSUB_CHANNELS", "@Thealphabotz").split()
+FSUB_CHANNELS = os.getenv("FSUB_CHANNELS", "@onlinechatgrroup").split()
 
 # Referral Configuration
 REDEEM_THRESHOLD = int(os.getenv("REDEEM_THRESHOLD", "5"))
