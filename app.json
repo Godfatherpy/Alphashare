@@ -1,18 +1,10 @@
 {
-  "name": "AlphaShare",
-  "description": "A secure file sharing bot using Telegram.",
+  "name": "Telegram Referral Bot",
+  "description": "A Telegram bot that incentivizes user growth through a point-based referral system.",
   "repository": "https://github.com/utkarshdubey2008/Alphashare",
   "env": {
     "BOT_TOKEN": {
       "description": "The Telegram bot token from @BotFather",
-      "required": true
-    },
-    "API_ID": {
-      "description": "Your Telegram API ID from my.telegram.org",
-      "required": true
-    },
-    "API_HASH": {
-      "description": "Your Telegram API Hash from my.telegram.org",
       "required": true
     },
     "MONGO_URI": {
@@ -21,79 +13,40 @@
     },
     "DATABASE_NAME": {
       "description": "The name of the database for storing bot data",
-      "value": "file_share_bot",
+      "value": "ReferralBot",
       "required": true
     },
-    "DB_CHANNEL_ID": {
-      "description": "Channel ID where files will be stored",
+    "ADMIN_ID": {
+      "description": "Your Telegram User ID (to receive redemption notifications)",
       "required": true
     },
-    "FORCE_SUB_CHANNEL": {
-      "description": "First mandatory subscription channel",
+    "ADMIN_USERNAME": {
+      "description": "Your Telegram Username (without @) for users to contact you",
       "required": true
     },
-    "FORCE_SUB_CHANNEL_2": {
-      "description": "Second mandatory subscription channel (set 0 if not used)",
-      "value": "0",
-      "required": false
-    },
-    "CHANNEL_LINK": {
-      "description": "Link to the first mandatory subscription channel",
+    "FSUB_CHANNELS": {
+      "description": "Space-separated channel usernames users must join (e.g., @Channel1 @Channel2)",
       "required": true
     },
-    "CHANNEL_LINK_2": {
-      "description": "Link to the second mandatory subscription channel (leave empty if not used)",
-      "value": "",
-      "required": false
-    },
-    "DEVELOPER_LINK": {
-      "description": "Link to the developer's Telegram profile or bot support",
+    "REDEEM_THRESHOLD": {
+      "description": "Minimum referrals needed to redeem",
+      "value": "5",
       "required": true
-    },
-    "SUPPORT_LINK": {
-      "description": "Link to the support group or chat for the bot",
-      "required": true
-    },
-    "BOT_USERNAME": {
-      "description": "The username of your bot (without @)",
-      "required": true
-    },
-    "BOT_NAME": {
-      "description": "The display name of your bot",
-      "value": "Alpha File Share Bot",
-      "required": true
-    },
-    "MODIJI_API_KEY": {
-      "description": "API key for external services (if applicable)",
-      "required": false
     },
     "WEB_SERVER": {
-      "description": "Set to True for hosting on platforms like Render/Koyeb; False if using local hosting",
+      "description": "Set to True for hosting on platforms like Render/Koyeb",
       "value": "True",
       "required": true
     },
     "PING_URL": {
-      "description": "The health check or ping URL for keeping the bot active",
+      "description": "Optional: The URL of this bot for keeping it alive (Render/Koyeb)",
       "required": false
     },
     "PING_TIME": {
-      "description": "Interval (in seconds) to ping the bot to prevent sleeping",
-      "value": "300",
+      "description": "Interval (in seconds) to ping the bot",
+      "value": "600",
       "required": false
-    },
-    "ADMIN_IDS": {
-      "description": "List of admin Telegram user IDs who have control over the bot",
-      "required": true
-    },
-    "PRIVACY_MODE": {
-      "description": "Set to 'on' for restricting users to copy or forward the content",
-      "value": "off",
-      "required": false
-    },
-    "AUTO_DELETE_TIME": {
-      "description": "Time (in minutes) after which a file will be automatically deleted after being accessed",
-      "value": "30",
-      "required": true
     }
-  }
+  },
+  "stack": "container"
 }
